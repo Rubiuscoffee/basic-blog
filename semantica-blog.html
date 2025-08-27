@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semántica y Estructura de Blogs - Guía para Diseñadores</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de semántica - Escala de grises */
+        .semantic-section {
+            background: #ffffff;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .semantic-section h3 {
+            color: #374151;
+            border-bottom: 2px solid #e5e5e5;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .html-tag {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .structure-visual {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+        
+        .structure-visual .indent-1 { margin-left: 1rem; }
+        .structure-visual .indent-2 { margin-left: 2rem; }
+        .structure-visual .indent-3 { margin-left: 3rem; }
+        
+        .blog-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .blog-type-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .blog-type-card:hover {
+            border-color: #6b7280;
+            box-shadow: 0 4px 12px rgba(107, 114, 128, 0.1);
+        }
+        
+        .blog-type-card h4 {
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        
+        .semantic-highlight {
+            background: linear-gradient(120deg, #f3f4f6 0%, #f3f4f6 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 80%;
+            padding: 0 0.2rem;
+        }
+        
+        .navigation-breadcrumb {
+            background: #f3f4f6;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .navigation-breadcrumb a {
+            color: #374151;
+            text-decoration: none;
+        }
+        
+        .navigation-breadcrumb a:hover {
+            text-decoration: underline;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>CSS Learning Blog</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="semantica-blog.html" style="color: #374151; font-weight: 600;">Semántica de Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="navigation-breadcrumb">
+            <a href="index.html">Inicio</a> → <span>Semántica y Estructura de Blogs</span>
+        </div>
+        
+        <section class="hero-section">
+            <article class="featured-article">
+                <h2>Semántica y Estructura de Blogs</h2>
+                <p class="article-meta">Guía completa para diseñadores gráficos • Conceptos fundamentales</p>
+                <p class="article-excerpt">Aprende cómo se estructura un blog desde el punto de vista técnico y semántico. Esta guía te ayudará a entender los elementos HTML y cómo organizarlos para crear blogs efectivos y accesibles.</p>
+            </article>
+        </section>
+
+        <div class="content-grid">
+            <div class="main-articles">
+                <!-- Sección 1: ¿Qué es la semántica HTML? -->
+                <div class="semantic-section">
+                    <h3>🏗️ ¿Qué es la Semántica HTML?</h3>
+                    <p>La <span class="semantic-highlight">semántica HTML</span> se refiere al significado de los elementos que usamos para estructurar una página web. En lugar de usar solo <span class="html-tag">&lt;div&gt;</span> para todo, usamos etiquetas que describen el contenido.</p>
+                    
+                    <h4>¿Por qué es importante?</h4>
+                    <ul>
+                        <li><strong>Accesibilidad:</strong> Los lectores de pantalla entienden mejor el contenido</li>
+                        <li><strong>SEO:</strong> Los motores de búsqueda comprenden mejor tu sitio</li>
+                        <li><strong>Mantenimiento:</strong> El código es más fácil de leer y modificar</li>
+                        <li><strong>Estilo:</strong> Es más fácil aplicar CSS de manera consistente</li>
+                    </ul>
+                </div>
+
+                <!-- Sección 2: Estructura básica de un blog -->
+                <div class="semantic-section">
+                    <h3>📋 Estructura Básica de un Blog</h3>
+                    <p>Todo blog bien estructurado sigue esta jerarquía semántica:</p>
+                    
+                    <div class="structure-visual">
+                        <div><span class="html-tag">&lt;html&gt;</span></div>
+                        <div class="indent-1"><span class="html-tag">&lt;head&gt;</span> - Metadatos, título, CSS</div>
+                        <div class="indent-1"><span class="html-tag">&lt;body&gt;</span></div>
+                        <div class="indent-2"><span class="html-tag">&lt;header&gt;</span> - Cabecera del sitio</div>
+                        <div class="indent-3"><span class="html-tag">&lt;nav&gt;</span> - Navegación principal</div>
+                        <div class="indent-2"><span class="html-tag">&lt;main&gt;</span> - Contenido principal</div>
+                        <div class="indent-3"><span class="html-tag">&lt;section&gt;</span> - Secciones del contenido</div>
+                        <div class="indent-3"><span class="html-tag">&lt;article&gt;</span> - Artículos individuales</div>
+                        <div class="indent-3"><span class="html-tag">&lt;aside&gt;</span> - Contenido lateral (sidebar)</div>
+                        <div class="indent-2"><span class="html-tag">&lt;footer&gt;</span> - Pie de página</div>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Elementos semánticos explicados -->
+                <div class="semantic-section">
+                    <h3>🔍 Elementos Semánticos Explicados</h3>
+                    
+                    <h4><span class="html-tag">&lt;header&gt;</span> - Cabecera</h4>
+                    <p>Contiene el título del blog, logo y navegación principal. Es lo primero que ven los usuarios.</p>
+                    
+                    <h4><span class="html-tag">&lt;nav&gt;</span> - Navegación</h4>
+                    <p>Menú principal del sitio. Ayuda a los usuarios a moverse entre páginas.</p>
+                    
+                    <h4><span class="html-tag">&lt;main&gt;</span> - Contenido Principal</h4>
+                    <p>El contenido más importante de la página. Solo debe haber uno por página.</p>
+                    
+                    <h4><span class="html-tag">&lt;article&gt;</span> - Artículo</h4>
+                    <p>Contenido independiente que tiene sentido por sí solo (como una entrada de blog).</p>
+                    
+                    <h4><span class="html-tag">&lt;section&gt;</span> - Sección</h4>
+                    <p>Agrupa contenido relacionado. Cada sección debería tener un encabezado.</p>
+                    
+                    <h4><span class="html-tag">&lt;aside&gt;</span> - Contenido Lateral</h4>
+                    <p>Información complementaria como sidebar, widgets o anuncios.</p>
+                    
+                    <h4><span class="html-tag">&lt;footer&gt;</span> - Pie de Página</h4>
+                    <p>Información adicional como copyright, enlaces legales o redes sociales.</p>
+                </div>
+
+                <!-- Sección 4: Tipos de blogs -->
+                <div class="semantic-section">
+                    <h3>📝 Tipos de Blogs y sus Estructuras</h3>
+                    <p>Diferentes tipos de blogs requieren estructuras ligeramente diferentes:</p>
+                    
+                    <div class="blog-type-grid">
+                        <div class="blog-type-card">
+                            <h4>Blog Personal</h4>
+                            <p><strong>Estructura:</strong> Simple y centrada en el autor</p>
+                            <ul>
+                                <li>Foto/bio del autor prominente</li>
+                                <li>Artículos en orden cronológico</li>
+                                <li>Categorías personales</li>
+                                <li>Sección "Sobre mí"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="blog-type-card">
+                            <h4>Blog Corporativo</h4>
+                            <p><strong>Estructura:</strong> Profesional y orientada a negocio</p>
+                            <ul>
+                                <li>Logo de empresa prominente</li>
+                                <li>Categorías por productos/servicios</li>
+                                <li>Call-to-actions claros</li>
+                                <li>Información de contacto</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="blog-type-card">
+                            <h4>Blog Magazine</h4>
+                            <p><strong>Estructura:</strong> Rica en contenido y categorías</p>
+                            <ul>
+                                <li>Múltiples categorías</li>
+                                <li>Artículos destacados</li>
+                                <li>Grid de contenido complejo</li>
+                                <li>Múltiples autores</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="blog-type-card">
+                            <h4>Blog de Nicho</h4>
+                            <p><strong>Estructura:</strong> Especializada en un tema</p>
+                            <ul>
+                                <li>Navegación temática específica</li>
+                                <li>Recursos especializados</li>
+                                <li>Comunidad/comentarios activos</li>
+                                <li>Herramientas del nicho</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 5: Jerarquía de encabezados -->
+                <div class="semantic-section">
+                    <h3>📊 Jerarquía de Encabezados</h3>
+                    <p>Los encabezados (<span class="html-tag">h1</span> a <span class="html-tag">h6</span>) crean una estructura jerárquica:</p>
+                    
+                    <div class="structure-visual">
+                        <div><span class="html-tag">&lt;h1&gt;</span> - Título principal (solo uno por página)</div>
+                        <div class="indent-1"><span class="html-tag">&lt;h2&gt;</span> - Secciones principales</div>
+                        <div class="indent-2"><span class="html-tag">&lt;h3&gt;</span> - Subsecciones</div>
+                        <div class="indent-3"><span class="html-tag">&lt;h4&gt;</span> - Sub-subsecciones</div>
+                        <div class="indent-3"><span class="html-tag">&lt;h5&gt;</span> - Detalles menores</div>
+                        <div class="indent-3"><span class="html-tag">&lt;h6&gt;</span> - Detalles muy específicos</div>
+                    </div>
+                    
+                    <p><strong>Regla importante:</strong> No saltes niveles (no uses h4 después de h2 sin h3).</p>
+                </div>
+
+                <!-- Sección 6: Mejores prácticas -->
+                <div class="semantic-section">
+                    <h3>✅ Mejores Prácticas para Diseñadores</h3>
+                    
+                    <h4>🎨 Desde la Perspectiva de Diseño:</h4>
+                    <ul>
+                        <li><strong>Jerarquía Visual:</strong> Los elementos semánticos deben tener estilos que reflejen su importancia</li>
+                        <li><strong>Consistencia:</strong> Elementos del mismo tipo deben verse similares</li>
+                        <li><strong>Espaciado:</strong> Usa márgenes y padding para separar secciones claramente</li>
+                        <li><strong>Tipografía:</strong> Diferentes niveles de encabezados necesitan diferentes tamaños</li>
+                    </ul>
+                    
+                    <h4>🔧 Desde la Perspectiva Técnica:</h4>
+                    <ul>
+                        <li><strong>Un solo h1:</strong> Solo debe haber un h1 por página</li>
+                        <li><strong>Orden lógico:</strong> Los encabezados deben seguir un orden jerárquico</li>
+                        <li><strong>Contenido significativo:</strong> Cada sección debe tener contenido relevante</li>
+                        <li><strong>Navegación clara:</strong> Los usuarios deben saber dónde están</li>
+                    </ul>
+                </div>
+
+                <!-- Sección 7: Errores comunes -->
+                <div class="semantic-section">
+                    <h3>❌ Errores Comunes a Evitar</h3>
+                    
+                    <div style="background: #f9fafb; border: 1px solid #d1d5db; border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">🚫 No hagas esto:</h4>
+                        <ul>
+                            <li>Usar solo <span class="html-tag">&lt;div&gt;</span> para todo</li>
+                            <li>Múltiples <span class="html-tag">&lt;h1&gt;</span> en una página</li>
+                            <li>Saltar niveles de encabezados (h2 → h4)</li>
+                            <li>Usar encabezados solo para hacer texto grande</li>
+                            <li>No usar <span class="html-tag">&lt;main&gt;</span> para el contenido principal</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f3f4f6; border: 1px solid #9ca3af; border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                        <h4 style="color: #1f2937; margin-bottom: 1rem;">✅ Haz esto en su lugar:</h4>
+                        <ul>
+                            <li>Usa elementos semánticos apropiados</li>
+                            <li>Un solo <span class="html-tag">&lt;h1&gt;</span> que describa la página</li>
+                            <li>Jerarquía lógica de encabezados</li>
+                            <li>Usa CSS para el estilo, HTML para la estructura</li>
+                            <li>Envuelve el contenido principal en <span class="html-tag">&lt;main&gt;</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <section class="about-widget">
+                    <h3>💡 Para Diseñadores</h3>
+                    <div class="author-avatar"></div>
+                    <p>Esta guía te ayuda a entender cómo estructurar blogs desde una perspectiva técnica, complementando tus habilidades de diseño visual.</p>
+                </section>
+
+                <section class="categories-widget">
+                    <h3>🏷️ Elementos Clave</h3>
+                    <ul>
+                        <li><a href="#">Header & Navigation <span>(nav)</span></a></li>
+                        <li><a href="#">Main Content <span>(main)</span></a></li>
+                        <li><a href="#">Articles <span>(article)</span></a></li>
+                        <li><a href="#">Sections <span>(section)</span></a></li>
+                        <li><a href="#">Sidebar <span>(aside)</span></a></li>
+                        <li><a href="#">Footer <span>(footer)</span></a></li>
+                    </ul>
+                </section>
+
+                <section class="newsletter-widget">
+                    <h3>🎯 Próximos Pasos</h3>
+                    <p>Ahora que entiendes la estructura, practica modificando el código de este blog.</p>
+                    <div style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <p style="font-size: 0.9rem; margin: 0;"><strong>Consejo:</strong> Usa las herramientas de desarrollador del navegador (F12) para inspeccionar este mismo sitio y ver cómo está estructurado.</p>
+                    </div>
+                </section>
+
+                <section class="recent-posts">
+                    <h3>📚 Recursos Adicionales</h3>
+                    <ul>
+                        <li><a href="#">Guía HTML5 Semántico</a></li>
+                        <li><a href="#">Herramientas de Validación</a></li>
+                        <li><a href="#">Ejemplos de Estructuras</a></li>
+                        <li><a href="#">Checklist de Accesibilidad</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Plantilla Educativa CSS</h4>
+                <p>Proyecto diseñado para enseñar CSS y HTML semántico a diseñadores gráficos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos de Aprendizaje</h4>
+                <ul>
+                    <li><a href="#">Documentación HTML</a></li>
+                    <li><a href="#">Guías de Semántica</a></li>
+                    <li><a href="#">Ejemplos Prácticos</a></li>
+                    <li><a href="#">Validadores de Código</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Útiles</h4>
+                <ul>
+                    <li><a href="#">HTML5 Validator</a></li>
+                    <li><a href="#">Accessibility Checker</a></li>
+                    <li><a href="#">SEO Structure Tool</a></li>
+                    <li><a href="#">Semantic HTML Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Plantilla Educativa CSS. Proyecto de código abierto para aprendizaje.</p>
+        </div>
+    </footer>
+</body>
+</html>

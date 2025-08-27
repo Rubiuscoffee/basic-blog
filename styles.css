@@ -1,19 +1,27 @@
-/* Reset y configuración base */
+/* ========================================
+   RESET Y CONFIGURACIÓN BASE
+   ======================================== */
+
+/* Reset universal: elimina márgenes y padding por defecto
+   box-sizing: border-box hace que padding y border se incluyan en el ancho total */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Configuración base del body con system fonts para mejor rendimiento */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
+    line-height: 1.6; /* Mejora la legibilidad */
     color: #1a1a1a;
-    background-color: #fafafa;
-    font-size: 16px;
+    background-color: #fafafa; /* Gris muy claro para reducir fatiga visual */
+    font-size: 16px; /* Tamaño base accesible */
 }
 
-/* Header y Navegación */
+/* ========================================
+   HEADER Y NAVEGACIÓN
+   ======================================== */
 .header {
     background-color: #ffffff;
     border-bottom: 1px solid #e5e5e5;
@@ -111,20 +119,28 @@ body {
     opacity: 0.7;
 }
 
-/* Grid de Contenido */
+/* ========================================
+   GRID DE CONTENIDO PRINCIPAL
+   ======================================== */
+
+/* Layout principal usando CSS Grid: contenido principal + sidebar */
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 4rem;
+    grid-template-columns: 1fr 300px; /* Contenido flexible + sidebar fijo */
+    gap: 4rem; /* Espacio entre columnas */
     margin-bottom: 4rem;
 }
 
-/* Artículos Principales */
+/* ========================================
+   GRID DE ARTÍCULOS
+   ======================================== */
+
+/* Grid responsivo para artículos usando auto-fit y minmax */
 .main-articles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas que se adaptan automáticamente */
     gap: 2rem;
-    grid-auto-rows: min-content;
+    grid-auto-rows: min-content; /* Filas se ajustan al contenido */
 }
 
 .article-card {
@@ -184,11 +200,15 @@ body {
     font-size: 0.85rem;
 }
 
-/* Sidebar */
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+/* Sidebar usando Flexbox para layout vertical */
 .sidebar {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: column; /* Elementos apilados verticalmente */
+    gap: 2rem; /* Espacio uniforme entre secciones */
 }
 
 .sidebar section {
@@ -322,7 +342,10 @@ body {
     color: #000;
 }
 
-/* Footer */
+/* ========================================
+   FOOTER
+   ======================================== */
+
 .footer {
     background: #f5f5f5;
     border-top: 1px solid #e5e5e5;
@@ -383,7 +406,11 @@ body {
     font-size: 0.85rem;
 }
 
-/* Responsive Design */
+/* ========================================
+   DISEÑO RESPONSIVO
+   ======================================== */
+
+/* Media query para tablets y móviles */
 @media (max-width: 768px) {
     .nav {
         padding: 0 1rem;
@@ -430,6 +457,34 @@ body {
     }
 }
 
+/* ========================================
+   ETIQUETAS DE ARTÍCULOS
+   ======================================== */
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Media query para móviles pequeños */
 @media (max-width: 480px) {
     .nav-menu {
         flex-direction: column;
